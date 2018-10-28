@@ -1,1 +1,12 @@
-console.log('This is an entry')
+import React from "react";
+import ReactDOM from "react-dom";
+
+const App = () => {
+  return (
+    <div>
+      <p>React is so amazing!</p>
+    </div>
+  );
+};
+export default App;
+ReactDOM.render(<App />, document.getElementById("app"));
