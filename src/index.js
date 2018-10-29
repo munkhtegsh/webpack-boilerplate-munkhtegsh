@@ -10,7 +10,6 @@ const App = () => {
     <p>React is so awesome! Icon file size {String.fromCharCode(60)} 1mb </p>
     <img className="woman" src={woman} />
     <p>I always enjoy React (.png image)</p>
-    <img src={icons} />
     </div>; 
 };
 
