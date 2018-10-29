@@ -3,10 +3,10 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   output: {
-    filename: 'main.[hash].js',
-    path: path.resolve(__dirname, 'dist')
+    filename: "main.[hash].js",
+    path: path.resolve(__dirname, "dist")
   },
   module: {
     rules: [
@@ -36,9 +36,19 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(png|jpg|gif)$/,
+        use: ["file-loader"]
+      },
+      {
+        test: /\.(svg)$/i,
         use: [
-          'file-loader'
+          {
+            loader: "url-loader",
+            options: {
+              limit: 999999.9,
+              name: '[name].[hash:7].svg'
+            }
+          }
         ]
       }
     ]
@@ -49,7 +59,7 @@ module.exports = {
   plugins: [
     new HtmlWebPackPlugin({
       template: "./src/index.html",
-      filename: "./index.[hash].html"
+      filename: "./index.html"
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
