@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import "./style.scss";
 import react_icon from "./react-icon.svg";
 import woman from './enjoy.png';
-import icons from './download.svg';
 
 const App = () => {
   return <div>
